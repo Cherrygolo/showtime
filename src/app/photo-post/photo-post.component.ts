@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PhotoPost } from '../models/photo-post.model';
-import { NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-photo-post',
   imports: [
-    NgStyle
+    NgStyle, NgClass
   ],
   templateUrl: './photo-post.component.html',
   styleUrl: './photo-post.component.scss',

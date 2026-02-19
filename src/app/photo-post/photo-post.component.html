@@ -1,4 +1,4 @@
-<div class="photo-post-card">
+<div class="photo-post-card" [ngClass]="{liked : userHasLiked}">
     <h1>{{ photoPost.title }}</h1>
     @if (photoPost.location) {
         <p>Localisation : {{ photoPost.location }}</p>

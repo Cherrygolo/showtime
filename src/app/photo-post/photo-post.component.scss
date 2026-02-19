@@ -29,3 +29,15 @@
     }
   }
 }
+
+.liked {
+  background-color: rgba(lightpink, 0.4);
+  color: darkred;
+  button {
+    box-shadow: lightpink 3px 3px 7px;
+    color: darkred;
+    &:active {
+      box-shadow: lightpink 0 0 5px;
+    }
+  }
+}
