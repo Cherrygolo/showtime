@@ -1,7 +1,7 @@
 <div class="photo-post-card">
-    <h1>{{ title }}</h1>
-    <img [src]="imageUrl" [alt]="title" />
-    <p>{{ description }}</p>
-    <p>Créé le : {{ createdAt}}</p>    
-    <p><button (click)="onLikeButtonClick()">{{likeButtonText}}{{ likes }}</button></p>
+    <h1>{{ photoPost.title }}</h1>
+    <img [src]="photoPost.imageUrl" [alt]="photoPost.title" />
+    <p>{{ photoPost.description }}</p>
+    <p>Créé le : {{ photoPost.createdAt}}</p>    
+    <p><button (click)="onLikeButtonClick()">{{ likeButtonText }}{{ photoPost.likes }}</button></p>
 </div>

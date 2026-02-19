@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PhotoPost } from '../models/photo-post.model';
 
 @Component({
   selector: 'app-photo-post',
@@ -7,25 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './photo-post.component.scss',
 })
 export class PhotoPostComponent implements OnInit {
-  title!: string;
-  description!: string;
-  createdAt!: Date;
-  likes!: number;
-  imageUrl!: string;
+
+  @Input() photoPost! : PhotoPost;
   userHasLiked!: boolean;
 
   ngOnInit(): void {
-    this.title = 'Amanite mouche';
-    this.description = 'Le plus beau champignon !';
-    this.createdAt = new Date();
-    this.likes = 5;
     this.userHasLiked = false;
-    this.imageUrl = 'https://cdn.pixabay.com/photo/2014/11/04/08/13/fly-agaric-516281_1280.jpg';
   }
 
   onLikeButtonClick() : void {
     this.userHasLiked = !this.userHasLiked;
-    this.likes += this.userHasLiked ? 1 : -1;
+    this.userHasLiked ? this.photoPost.addLike() : this.photoPost.removeLike();
   }
 
   get likeButtonText(): string {
