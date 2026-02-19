@@ -10,14 +10,25 @@ export class ImageViewerComponent implements OnInit {
   title!: string;
   description!: string;
   createdAt!: Date;
-  snaps!: number;
+  likes!: number;
   imageUrl!: string;
+  userHasLiked!: boolean;
 
   ngOnInit(): void {
     this.title = 'Amanite mouche';
     this.description = 'Le plus beau champignon !';
     this.createdAt = new Date();
-    this.snaps = 5;
+    this.likes = 5;
+    this.userHasLiked = false;
     this.imageUrl = 'https://cdn.pixabay.com/photo/2014/11/04/08/13/fly-agaric-516281_1280.jpg';
+  }
+
+  onLikeButtonClick() : void {
+    this.userHasLiked = !this.userHasLiked;
+    this.likes += this.userHasLiked ? 1 : -1;
+  }
+
+  get likeButtonText(): string {
+    return this.userHasLiked ? '❤️' : '🩶';
   }
 }
