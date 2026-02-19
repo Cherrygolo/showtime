@@ -1,5 +1,8 @@
 <div class="photo-post-card">
     <h1>{{ photoPost.title }}</h1>
+    @if (photoPost.location) {
+        <p>Localisation : {{ photoPost.location }}</p>
+    }
     <img [src]="photoPost.imageUrl" [alt]="photoPost.title" />
     <p>{{ photoPost.description }}</p>
     <p>Créé le : {{ photoPost.createdAt}}</p>    

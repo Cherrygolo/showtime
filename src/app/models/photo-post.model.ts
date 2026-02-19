@@ -1,5 +1,7 @@
 export class PhotoPost {
 
+    location?: string;
+
     constructor(public title: string,
                 public description: string,
                 public imageUrl: string,
@@ -12,5 +14,9 @@ export class PhotoPost {
 
     removeLike() : void {
         this.likes--;
+    }
+
+    setLocation(location: string) {
+        this.location = location;
     }
 }
