@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-photo-post',
   imports: [],
-  templateUrl: './photo-post.html',
-  styleUrl: './photo-post.scss',
+  templateUrl: './photo-post.component.html',
+  styleUrl: './photo-post.component.scss',
 })
-export class PhotoPost implements OnInit {
+export class PhotoPostComponent implements OnInit {
   title!: string;
   description!: string;
   createdAt!: Date;
