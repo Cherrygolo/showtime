@@ -6,5 +6,9 @@
     <img [src]="photoPost.imageUrl" [alt]="photoPost.title" />
     <p>{{ photoPost.description }}</p>
     <p>Créé le : {{ photoPost.createdAt}}</p>    
-    <p><button (click)="onLikeButtonClick()">{{ likeButtonText }}{{ photoPost.likes }}</button></p>
+    <p>
+        <button (click)="onLikeButtonClick()">
+            <span [ngStyle]="{ color : 'rgb( 0 ,' + photoPost.likes + ', 0)'}">{{ likeButtonText }} {{ photoPost.likes }}</span>
+    </button>
+    </p>
 </div>

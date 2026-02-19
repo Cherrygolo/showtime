@@ -21,19 +21,19 @@ export class AppComponent implements OnInit{
         'Le plus beau champignon qu\'il ne faut surtout pas manger !', 
         'https://cdn.pixabay.com/photo/2014/11/04/08/13/fly-agaric-516281_1280.jpg', 
         new Date(), 
-        10),
+        50),
       new PhotoPost(
         'Morille', 
         'Un champignon très savoureux dans une sauce.', 
         'https://cdn.pixabay.com/photo/2021/05/03/19/09/morels-6227065_1280.jpg', 
         new Date(), 
-        7),
+        111),
       new PhotoPost(
         'Champignon de paris', 
         'Le plus plus franchouillard des champignons !', 
         'https://cdn.pixabay.com/photo/2019/05/16/20/17/fungus-4208115_1280.jpg', 
         new Date(), 
-        22)
+        199)
     ]
 
     this.photoPosts[2].setLocation('Champignonnière des Carrières (EVECQUEMONT)')
