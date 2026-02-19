@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-image-viewer',
+  selector: 'app-photo-post',
   imports: [],
-  templateUrl: './image-viewer.html',
-  styleUrl: './image-viewer.scss',
+  templateUrl: './photo-post.html',
+  styleUrl: './photo-post.scss',
 })
-export class ImageViewerComponent implements OnInit {
+export class PhotoPost implements OnInit {
   title!: string;
   description!: string;
   createdAt!: Date;

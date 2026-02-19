@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { ImageViewerComponent } from './image-viewer/image-viewer';
+import { PhotoPost } from './photo-post/photo-post';
 
 @Component({
   selector: 'app-root',
   imports: [
-    ImageViewerComponent
+    PhotoPost
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
