@@ -1,1 +1,3 @@
-<app-photo-post [photoPost]="photoPost"></app-photo-post>
+@for (photoPost of photoPosts; track photoPost.title) {
+    <app-photo-post [photoPost]="photoPost"/>
+}
