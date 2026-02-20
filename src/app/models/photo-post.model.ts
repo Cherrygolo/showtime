@@ -19,4 +19,9 @@ export class PhotoPost {
     setLocation(location: string) {
         this.location = location;
     }
+
+    withLocation(location: string) {
+        this.location = location;
+        return this;
+    }
 }
