@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { PhotoPost } from "../models/photo-post.model";
+import { InteractionType } from "../models/interaction-type.type";
 
 // Pour utiliser la classe comme un service
 @Injectable({
@@ -31,6 +32,19 @@ export class PhotoPostsService {
 
     getPhotoPosts(): PhotoPost[] {
         return [...this.photoPosts];
+    }
+
+    updatePhotoPostInteractionById(photoPostId: string, interactionType: InteractionType): void {
+        const photoPost = this.photoPosts.find(p => p.id === photoPostId);
+        if (!photoPost) {
+            throw new Error('PhotoPost not found');
+        }
+
+        if (interactionType === 'like') {
+            photoPost.addLike();
+        } else if (interactionType === 'unlike') {
+            photoPost.removeLike();
+        }
     }
 
 }

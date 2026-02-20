@@ -1,12 +1,16 @@
 export class PhotoPost {
 
     location?: string;
+    id: string;
 
     constructor(public title: string,
                 public description: string,
                 public imageUrl: string,
                 public createdAt: Date,
-                public likes: number ) {}
+                public likes: number ) {
+
+        this.id = crypto.randomUUID().substring(0, 8);
+    }
     
     addLike() : void {
         this.likes++;
