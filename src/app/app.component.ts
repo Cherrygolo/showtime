@@ -1,12 +1,12 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { PhotoPostListComponent } from './photo-post-list/photo-post-list.component';
 import { HeaderComponent } from './header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
     HeaderComponent,
-    PhotoPostListComponent
+    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
