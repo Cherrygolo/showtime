@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PhotoPost } from '../models/photo-post.model';
-import { NgClass, NgStyle } from '@angular/common';
+import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-photo-post',
   imports: [
-    NgStyle, NgClass
+    NgStyle, NgClass, TitleCasePipe, DatePipe
   ],
   templateUrl: './photo-post.component.html',
   styleUrl: './photo-post.component.scss',
