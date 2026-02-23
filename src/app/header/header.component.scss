@@ -9,8 +9,10 @@ a {
   margin: 0 10px;
   color: #333;
   text-decoration: none;
+  font-variation-settings: "wght" 100;
+  transition: font-variation-settings 1s ease-out;
   &:hover {
-    text-decoration: underline;
+    font-variation-settings: "wght" 1000;
   }
 }
 
