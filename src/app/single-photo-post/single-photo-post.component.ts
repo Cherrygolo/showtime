@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PhotoPost } from '../models/photo-post.model';
 import { PhotoPostsService } from '../services/photo-posts.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PhotoPostComponent } from '../photo-post/photo-post.component';
 
 @Component({
@@ -18,7 +18,8 @@ export class SinglePhotoPostComponent implements OnInit {
   userHasLiked!: boolean;
 
   constructor(private photoPostsService: PhotoPostsService,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.getPhotoPost();
@@ -26,7 +27,13 @@ export class SinglePhotoPostComponent implements OnInit {
 
   private getPhotoPost() {
     const photoPostId = this.route.snapshot.params['id'];
+    try {
     this.photoPost = this.photoPostsService.getPhotoPostById(photoPostId);
+    } catch (error) {
+      console.error(error);
+      // Redirection vers la page 404
+      this.router.navigate(['/404']);
+    }
   }
 
 }
