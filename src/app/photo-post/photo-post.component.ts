@@ -2,11 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PhotoPost } from '../models/photo-post.model';
 import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
 import { PhotoPostsService } from '../services/photo-posts.service';
+import { BackButtonComponent } from '../back-button/back-button.component';
 
 @Component({
   selector: 'app-photo-post',
   imports: [
-    NgStyle, NgClass, TitleCasePipe, DatePipe
+    NgStyle, NgClass, TitleCasePipe, DatePipe,
+    BackButtonComponent
   ],
   templateUrl: './photo-post.component.html',
   styleUrl: './photo-post.component.scss',
@@ -14,6 +16,7 @@ import { PhotoPostsService } from '../services/photo-posts.service';
 export class PhotoPostComponent implements OnInit {
 
   @Input() photoPost! : PhotoPost;
+  @Input() mode: 'detail' | 'feed' = 'feed';
   userHasLiked!: boolean;
 
   constructor(private photoPostService: PhotoPostsService) {}

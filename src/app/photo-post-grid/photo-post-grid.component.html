@@ -1,0 +1,10 @@
+<h2>Découvre de nouvelles publications</h2>
+<div class="photo-grid">
+    @for (photoPost of photoPosts; track photoPost.id) {
+        <div class="photo-grid-element">
+            <a [routerLink]="['/discover', photoPost.id]" [attr.aria-label]="'Voir le post ' + photoPost.title">
+                <img [src]="photoPost.imageUrl" [alt]="'Photo de ' + photoPost.title"/>
+            </a>
+        </div>
+    }
+</div>

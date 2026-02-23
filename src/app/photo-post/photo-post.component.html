@@ -1,4 +1,7 @@
 <div class="photo-post-card" [ngClass]="{liked : userHasLiked}">
+    @if (mode=='detail') {
+        <app-back-button/>
+    }
     <h1>{{ photoPost.title | titlecase }}</h1>
     @if (photoPost.location) {
         <p>Localisation : {{ photoPost.location }}</p>
